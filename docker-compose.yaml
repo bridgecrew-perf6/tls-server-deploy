@@ -1,0 +1,10 @@
+services:
+  tls-server:
+    image: devopsuae/tls-server:${IMAGE_TAG}
+    container_name: tls-server
+    restart: always
+    command: /server/tiitls-server /server/certs/secp256r1
+    ports:
+      - 3333:3333
+    environment:
+      RUST_LOG: trace
